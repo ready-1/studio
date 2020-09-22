@@ -5,7 +5,12 @@ import boto3
 
 
 def get_aws_config():
-    # TODO: stub: get_aws_config()
+    try:
+        with open('../aws_config.json', 'r') as stream:
+            # TODO: change to use BASEDIR
+            config = json.load(stream)
+    except FileNotFoundError as e:
+        return f'ERROR: {e}'
     return config
 
 
@@ -27,3 +32,7 @@ def terminate_ec2_instance(params):
 def get_running_ec2_instance(params):
     # TODO: stub: get_running_ec2_instance(params)
     return
+
+
+my_conf = get_aws_config()
+print(my_conf)
