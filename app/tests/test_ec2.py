@@ -19,3 +19,5 @@ def test_get_ec2_instances():
     for page in page_iterator:
         pages.append(page)
     assert pages[0]["ResponseMetadata"]["HTTPStatusCode"] == 200
+
+    # TODO: add better tests for get_ec2_instances()
