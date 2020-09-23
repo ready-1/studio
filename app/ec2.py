@@ -54,13 +54,3 @@ def get_ec2_instances(filters=[], dry_run=False, pagination_config={"MaxItems": 
 def terminate_ec2_instance(params):
     # TODO: stub: terminate_ec2_instance(params)
     return
-
-
-# params = {}
-# filters = [{"Name": "tag:Organization", "Values": ["Ready-1"]}]
-# dry_run = False
-# pagination_config = {"MaxItems": 20, "PageSize": 20}
-# page_iterator = get_ec2_instances(filters, dry_run, pagination_config)
-page_iterator = get_ec2_instances()
-for page in page_iterator:
-    pprint(page, indent=1)
